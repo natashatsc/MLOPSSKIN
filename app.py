@@ -13,7 +13,7 @@ model = load_model()
 st.title("Skin Disease Image Classification")
 st.write("Upload an image and let the model predict its class.")
 
-class_names = ["Cellulitis", "Impetigo", "Athlete-foot", "Ringworm", "Nail-Fungus", "Chickenpox", "Cutaneous-larva-migrans", "Shingles"]   # ganti sesuai dataset kamu
+class_names = ["Cellulitis", "Impetigo", "Athlete-foot", "Ringworm", "Nail-Fungus", "Chickenpox", "Cutaneous-larva-migrans", "Shingles"]   
 
 uploaded_file = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
 
@@ -32,4 +32,5 @@ if uploaded_file is not None:
     st.subheader("Prediction Result")
     st.write(f"**Class:** {predicted_class}")
     st.write(f"**Confidence:** {confidence:.2f}%")
+
 
