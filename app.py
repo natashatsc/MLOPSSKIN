@@ -5,12 +5,12 @@ from PIL import Image
 
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model("my_model.h5")
+    model = tf.keras.models.load_model("my_model.keras")
     return model
 
 model = load_model()
 
-st.title("Image Classification App")
+st.title("Skin Disease Image Classification")
 st.write("Upload an image and let the model predict its class.")
 
 class_names = ["Cellulitis", "Impetigo", "Athlete-foot", "Ringworm", "Nail-Fungus", "Chickenpox", "Cutaneous-larva-migrans", "Shingles"]   # ganti sesuai dataset kamu
@@ -32,3 +32,4 @@ if uploaded_file is not None:
     st.subheader("Prediction Result")
     st.write(f"**Class:** {predicted_class}")
     st.write(f"**Confidence:** {confidence:.2f}%")
+
